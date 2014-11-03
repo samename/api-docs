@@ -49,7 +49,7 @@ username      | The username being checked.             | pepsi
     }
     
 ----
-### Username Identify Verification
+### Username Identity Verification
 #### `/username/verify`
 
 Username verification is an additional call to compare the passcode provided by the user registering for your service, and the passcode provided by SameName. Verification passcodes are unique to your service and the trademarked username.
