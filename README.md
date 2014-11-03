@@ -4,10 +4,10 @@ SameName is an API to reserve usernames for corporate trademarks. SameName reduc
 
 Businesses provide SameName with a list of their trademarked usernames (such as "pepsi", or "adobe"). We then automatically reserve their usernames across all developers using the SameName API.
 
-  - During registration, developers use an API check if a given username is reserved `/username/status`.
+  - During registration, developers use an API check if a given username is reserved.
   - If it's reserved, developers prompt users to enter their SameName passcode.
   - Businesses access their passcode via their SameName dashboard.
-  - Developers make a final API call to verify the provided passcode is correct `/username/verify`.
+  - Developers make a final API call to verify the provided passcode is correct.
 
 ## Register an Account
 
