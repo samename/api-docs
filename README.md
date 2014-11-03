@@ -23,7 +23,7 @@ Your `api_secret` is also required to make username verifications.
 
 Param         | Description                             | Privacy
 ------------- | --------------------------------------- | --------------
-api_key       | Public API Key used for all calls.      | Exposed; client side calls.
+api_key       | Public API Key used for all calls.      | Public; OK for client side calls.
 api_secret    | Private API Secret.                     | Private; **DO NOT** expose to the public.
 
 ## API
@@ -54,6 +54,8 @@ username      | The username being checked.             | pepsi
 Username verification is an additional call to compare the passcode provided by the user registering for your service, and the passcode provided by SameName. Verification passcodes are unique to your service and the trademarked username.
 
     POST https://api.getsamename.com/username/verify
+    
+**Note:** This call must be made from the server-side. Do not expose your `api_secret` to the public. This call is a one-way comparison, but preventing client-side exposure will prevent any unauthorized attemps to verify a username for your service.
     
 #### Params
 
