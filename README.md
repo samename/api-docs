@@ -12,7 +12,7 @@ Businesses provide SameName with a list of their trademarked usernames (such as 
 ## Register an Account
 
 To use the SameName API, you'll need to register as a SameName Developer:
-http://samename.co/#/developers
+http://getsamename.com/developers
 
 Once you've registered, make note of your API credentials, which can be found from your dashboard. It will be referenced in this documentation as `api_key` and `api_secret`.
 
