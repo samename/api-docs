@@ -14,10 +14,7 @@ Businesses provide SameName with a list of their trademarked usernames (such as 
 To use the SameName API, you'll need to register as a SameName Developer:
 http://samename.co/#/developers
 
-Once you've registered, make note of your API key, which can be found from your dashboard. It will be referenced
-in this documentation as `api_key` and is required for all API calls.
-
-Your `api_secret` is also required to make username verifications. 
+Once you've registered, make note of your API credentials, which can be found from your dashboard. It will be referenced in this documentation as `api_key` and `api_secret`.
 
 ## API Keys
 
@@ -55,7 +52,7 @@ Username verification is an additional call to compare the passcode provided by 
 
     POST https://api.getsamename.com/username/verify
     
-**Note:** This call must be made from the server-side. Do not expose your `api_secret` to the public. This call is a one-way comparison, but preventing client-side exposure will prevent any unauthorized attemps to verify a username for your service.
+**Note:** This call must be made from the server-side. Do not expose your `api_secret` to the public. This call is a one-way comparison, but preventing client-side exposure will reduce any unauthorized attemps to verify a username for your service.
     
 #### Params
 
@@ -74,4 +71,6 @@ passcode      | User-provided passcode for the username. | X7ycA499eB
       }
     }
 
+
+## Example Workflow
 
