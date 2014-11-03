@@ -16,7 +16,7 @@ http://samename.co/#/developers
 
 Once you've registered, make note of your API credentials, which can be found from your dashboard. It will be referenced in this documentation as `api_key` and `api_secret`.
 
-## API Keys
+### Developer API Credentials
 
 Param         | Description                             | Privacy
 ------------- | --------------------------------------- | --------------
