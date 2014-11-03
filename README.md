@@ -26,6 +26,11 @@ Trademark verification is a simple GET request that returns a boolean result on 
     
 #### Params
 
+Param         | Description                                      | Example
+------------- | ------------------------------------------------ | --------------
+api_key       | Your Developer API Key.                          | XXXXXXXXXXXXXXXXXXXX
+trademark     | A string of the requested trademarked username.  | pepsi
+
 - **api_key**: Your developer API key.
 - **trademark**: The requested username (ie. "pepsi").
     
