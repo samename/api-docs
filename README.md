@@ -18,11 +18,11 @@ in this documentation as `api_key`.
 
 ## Integraation
 
-### Trademark Verification
+### Trademark Status
 
-Trademark verification is a simple GET request that returns a boolean result on a provided username.
+Checking the status and availability of a trademark is a simple GET request to the SameName API. Requires a developer `api_key` and a `trademark` to check. Returns boolean on the status of the provided trademark.
 
-    POST https://api.samename.co/trademark/check
+    POST https://api.samename.co/trademark/status
     
 #### Params
 
@@ -31,9 +31,6 @@ Param         | Description                             | Example
 api_key       | Your Developer API Key.                 | Get a developer key. http://getsamename.com/developers
 trademark     | A string of the requested trademarked.  | pepsi
 
-- **api_key**: Your developer API key.
-- **trademark**: The requested username (ie. "pepsi").
-    
 #### Result
 
     {
