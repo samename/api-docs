@@ -1,35 +1,45 @@
 # SameName Developer API
 
-SameName is an API to reserve usernames for corporate trademarks. SameName reduces the need for startups to worry about username disputes and
-exposes your business to top brands. Here's how the developer integration works.
+SameName is an API to reserve usernames for corporate trademarks. SameName reduces startup workload for username disputes and exposes your business to top brands. We've create a simple work-flow to make it simple for developers to integrate the SameName API. 
 
-  - You run a simple API call to check if a username has been reserved. If it's available, it's busienss as usual.
-  - If it's been reserved, you ask the user for their SameName code.
-  - Busiensses access their unique code from their SameName dashboard.
-  - You make a second API call to verify the owner of the domain.
+Businesses provide SameName with a list of their trademarked usernames (such as "pepsi", or "adobe"). We then automatically reserve their usernames across all developers using the SameName API.
+
+  - During registration, developers use an API check if a given username is reserved.
+  - If it's reserved, developers prompt users to enter their SameName passcode.
+  - Businesses access their passcode via their SameName dashboard.
+  - Developers make a final API call to verify the provided passcode is correct.
 
 ## Register an Account
 
-To use the SameName API, you'll need to register as a SameName developer:
+To use the SameName API, you'll need to register as a SameName Developer:
 http://samename.co/#/developers
 
 Once you've registered, make note of your API key, which can be found from your dashboard. It will be referenced
-in this documentation as `api_key`.
+in this documentation as `api_key` and is required for all API calls.
 
-## Integraation
+Your `api_secret` is also required to make username verifications. 
 
-### Trademark Status
+## API Keys
 
-Checking the status and availability of a trademark is a simple GET request to the SameName API. Requires a developer `api_key` and a `trademark` to check. Returns boolean on the status of the provided trademark.
+Param         | Description                             | Privacy
+------------- | --------------------------------------- | --------------
+api_key       | Public API Key used for all calls.      | Exposed; client side calls.
+api_secret    | Private API Secret.                     | Private; **DO NOT** expose to the public.
 
-    POST https://api.samename.co/trademark/status
+## API
+
+### Username Status
+
+Checking the availability of a username is a simple GET request to the SameName API. It requires a developer `api_key` and a `username` field to check and returns boolean on the status of the provided username.
+
+    GET https://api.getsamename.com/username/status
     
 #### Params
 
 Param         | Description                             | Example
 ------------- | --------------------------------------- | --------------
-api_key       | Your Developer API Key.                 | Get a developer key. http://getsamename.com/developers
-trademark     | A string of the requested trademarked.  | pepsi
+api_key       | Your Developer API Key.                 | --
+username      | The username being checked.             | pepsi
 
 #### Result
 
@@ -38,3 +48,28 @@ trademark     | A string of the requested trademarked.  | pepsi
         reserved: [Boolean]
       }
     }
+    
+### Username Identify Verification
+
+Username verification is an additional call to compare the passcode provided by the user registering for your service, and the passcode provided by SameName. Verification passcodes are unique to your service and the trademarked username.
+
+    POST https://api.getsamename.com/username/verify
+    
+#### Params
+
+Param         | Description                              | Example
+------------- | ---------------------------------------- | --------------
+api_key       | Your Developer API Key.                  | --
+api_secret    | Your Developer API Secret.               | --
+username      | The username being checked.              | pepsi
+passcode      | User-provided passcode for the username. | X7ycA499eB
+
+#### Result
+
+    {
+      result: {
+        verified: [Boolean]
+      }
+    }
+
+
