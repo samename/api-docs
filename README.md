@@ -34,7 +34,7 @@ api_secret    | Private API Secret.                     | Private; **DO NOT** ex
 ### Username Status Check
 #### `/username/status`
 
-Checking the availability of a username is a simple GET request to the SameName API. It requires a developer `api_key` and a `username` field to check and returns boolean on the status of the provided username.
+Checking the availability of a username is a simple GET request to the SameName API. It requires a developer `api_key` and a `trademark` field to check and returns boolean on the status of the provided username.
 
     GET https://api.getsamename.com/username/status
     
@@ -43,7 +43,7 @@ Checking the availability of a username is a simple GET request to the SameName 
 Param         | Description                             | Example
 ------------- | --------------------------------------- | --------------
 api_key       | Your Developer API Key.                 | --
-username      | The username being checked.             | pepsi
+trademark     | The username being checked.             | pepsi
 
 #### Result
 
@@ -69,7 +69,7 @@ Param         | Description                                        | Example
 ------------- | -------------------------------------------------- | --------------
 api_key       | Your Developer API Key.                            | --
 api_secret    | Your Developer API Secret.                         | --
-username      | The username being checked.                        | pepsi
+trademark     | The username being checked.                        | pepsi
 code          | User-provided authorization code for the username. | X7ycA499eB
 
 #### Result
@@ -85,13 +85,13 @@ code          | User-provided authorization code for the username. | X7ycA499eB
 
 ### Username Status
 
-The easiest way to use the SameName API is to bake it directly into your own username verification system. When a new user registers with your system, you check the username they've chosen against your own system to check its availability. At the same time, make a simple GET request to `/username/status` with your `api_key` and the `username` in question. If it's taken, treat the result as if it were taken in your own system.
+The easiest way to use the SameName API is to bake it directly into your own username verification system. When a new user registers with your system, you check the username they've chosen against your own system to check its availability. At the same time, make a simple GET request to `/username/status` with your `api_key` and the `trademark` in question. If it's taken, treat the result as if it were taken in your own system.
 
 If the username has been reserved via SameName, toggle an input to the user, asking them to enter their "SameName Verification Code" for "xyz" username. If the user does in fact own rights to this username, they will sign into their SameName dashboard to retreive the code.
 
 ### Username Verifications
 
-The user will then supply the verification code to the input you've provided. From the server side, verify the provided code by calling `/username/verify` with your `api_key`, `api_secret`, the `username` in question, and the authorization `code` provided by the user.
+The user will then supply the verification code to the input you've provided. From the server side, verify the provided code by calling `/username/verify` with your `api_key`, `api_secret`, the `trademark` in question, and the authorization `code` provided by the user.
 
 From that call, you'll receive a boolean result on whether or not the authorization code is correct.
 
