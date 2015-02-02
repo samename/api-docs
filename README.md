@@ -10,11 +10,14 @@ Businesses provide SameName with a list of their trademarked usernames (such as 
   - If it's reserved, developers prompt users to enter their SameName authorization code.
   - Businesses access their authorization code via their SameName dashboard.
   - Developers make a final API call to verify the provided authorization code is correct.
+  
+## Support
+For support, please e-mail support@getsamename.com.
 
 ## Register an Account
 
 To use the SameName API, you'll need to register as a SameName Developer:
-http://getsamename.com/developers
+https://getsamename.com/#/developer
 
 Once you've registered, make note of your API credentials, which can be found from your dashboard. It will be referenced in this documentation as `api_key` and `api_secret`.
 
