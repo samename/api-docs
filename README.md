@@ -10,6 +10,7 @@ Businesses provide SameName with a list of their trademarked usernames (such as 
   - If it's reserved, developers prompt users to enter their SameName authorization code.
   - Businesses access their authorization code via their SameName dashboard.
   - Developers make a final API call to verify the provided authorization code is correct.
+  - If the verification code passes, developers allow the registration of the supplied username.
   
 ## Support
 For support, please e-mail support@getsamename.com.
